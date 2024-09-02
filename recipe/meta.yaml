@@ -1,5 +1,5 @@
 {% set name = "physicsml" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/physicsml-{{ version }}.tar.gz
-  sha256: 80faf6282107cc5f1066969d29261c235f7e31ff175e64d2d065a33940f1258a
+  sha256: a0ff6dcc660dad8ab638f9d16f18c31b6692a06fece37d9cf259e923f3902d68
 
 build:
   noarch: python
