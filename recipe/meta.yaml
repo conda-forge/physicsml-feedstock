@@ -21,7 +21,6 @@ requirements:
     - setuptools-scm >=6.2.0
     - pip
   run:
-    - torch-geometric >=2.5.0
     - python >=3.8
     - molflux >=0.5.0
     - pytorch >=2.0
