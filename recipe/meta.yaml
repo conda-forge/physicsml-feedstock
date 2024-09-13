@@ -1,5 +1,5 @@
 {% set name = "physicsml" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/physicsml-{{ version }}.tar.gz
-  sha256: a0ff6dcc660dad8ab638f9d16f18c31b6692a06fece37d9cf259e923f3902d68
+  sha256: 49a5c56e1c2a891ee1e2eced011b2be5c218d17e3157b244b5341ef06e888870
 
 build:
   noarch: python
@@ -21,6 +21,7 @@ requirements:
     - setuptools-scm >=6.2.0
     - pip
   run:
+    - torch-geometric >=2.5.0
     - python >=3.8
     - molflux >=0.5.0
     - pytorch >=2.0
