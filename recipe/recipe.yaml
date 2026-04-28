@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  name: physicsml
+  version: "0.6.0"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/physicsml-${{ version }}.tar.gz
+  sha256: 49a5c56e1c2a891ee1e2eced011b2be5c218d17e3157b244b5341ef06e888870
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python 3.10.*
+    - setuptools >=64.0.0
+    - setuptools-scm >=6.2.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - molflux >=0.5.0
+    - pytorch >=2.0
+    - lightning >=2.1
+    - pytorch_geometric >=2.5.0
+    - e3nn
+    - torchani !=2.2.4
+
+tests:
+  - python:
+      imports:
+        - physicsml
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: A package for all physics based/related models
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/Exscientia/physicsml
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
